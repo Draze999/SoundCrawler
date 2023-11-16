@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://coxjl46f5dx1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_duxld"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny0m0"]
+size = Vector2(1000, 100)
+
+[node name="Room H1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(503, 603)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
+modulate = Color(0.478431, 0.701961, 0, 1)
+position = Vector2(-1, 0)
+mesh = SubResource("QuadMesh_duxld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource("RectangleShape2D_ny0m0")
