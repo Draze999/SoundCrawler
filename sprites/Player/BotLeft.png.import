@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpvbsd5ppynht"
-path="res://.godot/imported/Preview_KenneyNL.png-55811fdefc3a7ee8a46b19e4916a8ae8.ctex"
+uid="uid://bdaq5er3ohv5b"
+path="res://.godot/imported/BotLeft.png-7ef940975e9cdccf3513302898dfcc6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Preview_KenneyNL.png"
-dest_files=["res://.godot/imported/Preview_KenneyNL.png-55811fdefc3a7ee8a46b19e4916a8ae8.ctex"]
+source_file="res://sprites/Player/BotLeft.png"
+dest_files=["res://.godot/imported/BotLeft.png-7ef940975e9cdccf3513302898dfcc6c.ctex"]
 
 [params]
 
