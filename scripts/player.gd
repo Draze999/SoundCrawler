@@ -8,9 +8,9 @@ var canDash = true
 var MaxDashTimer = 0.1
 var MaxDashResetTimer = 3
 var MaxDashCount = 5
-var DashTimer = 0.1
-@export var DashResetTimer = 3
-@export var DashCount = 5
+var DashTimer = MaxDashTimer
+@export var DashResetTimer = MaxDashResetTimer
+@export var DashCount = MaxDashCount
 var DashDirection = Vector2.ZERO
 @export var facing = 0 #0 = Right Bottom; 1 = Left Bottom; 2 = Right Top; 3 = Left Top;
 var facingX:int = 0
@@ -37,13 +37,17 @@ func _dash(delta):
 		DashCount += 1
 		DashResetTimer = MaxDashResetTimer
 
-func _input(_event):
-	direction.x = Input.get_axis("Move_Left", "Move_Right")
-	direction.y = Input.get_axis("Move_Up", "Move_Down")
+func _test_health():
 	if Input.is_action_just_pressed("Test_Health_Down"):
 		Health = clamp(Health - 1, 0, MaxHealth)
 	if Input.is_action_just_pressed("Test_Health_Up"):
+		if Health == MaxHealth:
+			MaxHealth += 1
 		Health = clamp(Health + 1, 0, MaxHealth)
+
+func _input(_event):
+	direction.x = Input.get_axis("Move_Left", "Move_Right")
+	direction.y = Input.get_axis("Move_Up", "Move_Down")
 	
 
 func _process(delta):
@@ -58,6 +62,7 @@ func _process(delta):
 	else:
 		facing = facingX + facingY
 
+	_test_health()
 	_dash(delta)
 	move_and_slide()
 

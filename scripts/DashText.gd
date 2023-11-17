@@ -8,13 +8,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var DashC = str(get_node("../Player").get("DashCount"))
-	var DashCD = str(snappedf(get_node("../Player").get("DashResetTimer"), 0.1))
+	var DashC = str(get_node("../Player").DashCount)
+	var DashCD = str(snappedf(get_node("../Player").DashResetTimer, 0.1))
 	var HP = ""
-	for x in get_node("../Player").get("Health"):
+	for x in get_node("../Player").Health:
 		HP += '♥'
 	var LastHP = ""
-	for x in (get_node("../Player").get("MaxHealth") - get_node("../Player").get("Health")):
+	for x in (get_node("../Player").MaxHealth - get_node("../Player").Health):
 		LastHP += "♡"
 	if DashCD.length() == 1:
 		DashCD += ".0"
