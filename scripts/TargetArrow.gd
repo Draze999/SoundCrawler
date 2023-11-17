@@ -16,6 +16,7 @@ func _process(delta):
 	distance = sqrt((direction.x * direction.x) + (direction.y * direction.y))
 	clamp(distance, 0, 1)
 	set_scale(Vector2(distance, distance))
+	modulate.a = distance * 0.7
 	rotate(atan2(direction.y, direction.x) - rotation)
 	position.x = 200 * direction.x
 	position.y = 200 * direction.y - 64

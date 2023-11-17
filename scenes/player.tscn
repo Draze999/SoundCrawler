@@ -12,7 +12,7 @@ size = Vector2(60, 126)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cj66b")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
 scale = Vector2(0.484375, 1)
 texture = ExtResource("1_2araf")
@@ -30,7 +30,7 @@ limit_right = 1920
 limit_bottom = 1080
 
 [node name="TargetArrow" type="Sprite2D" parent="."]
-show_behind_parent = true
+z_index = 1000
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_1rx0c")
 script = ExtResource("5_qlg0s")

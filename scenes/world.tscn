@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4jewdnjv5byo"]
+[gd_scene load_steps=6 format=3 uid="uid://c4jewdnjv5byo"]
 
 [ext_resource type="PackedScene" uid="uid://bgrklh33pla54" path="res://scenes/player.tscn" id="1_lvunc"]
 [ext_resource type="PackedScene" uid="uid://du7d1d6s36e7n" path="res://scenes/background.tscn" id="2_s41g0"]
+[ext_resource type="FontFile" uid="uid://cpvkchotumurn" path="res://Fonts/Unique.ttf" id="3_6pu8w"]
+[ext_resource type="Script" path="res://scripts/DashText.gd" id="3_iht71"]
+
+[sub_resource type="FontVariation" id="FontVariation_785kf"]
+base_font = ExtResource("3_6pu8w")
 
 [node name="World" type="Node2D"]
 
@@ -10,3 +15,22 @@ z_index = 1
 position = Vector2(591, 365)
 
 [node name="Background" parent="." instance=ExtResource("2_s41g0")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 4096
+z_as_relative = false
+offset_left = 128.0
+offset_top = 112.0
+offset_right = 595.0
+offset_bottom = 339.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = SubResource("FontVariation_785kf")
+theme_override_font_sizes/normal_font_size = 45
+text = "test"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+script = ExtResource("3_iht71")
