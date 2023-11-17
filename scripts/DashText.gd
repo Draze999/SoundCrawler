@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var DashC = str(get_node("../Player").DashCount)
 	var DashCD = str(snappedf(get_node("../Player").DashResetTimer, 0.1))
 	var HP = ""

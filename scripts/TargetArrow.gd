@@ -10,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	direction.x = Input.get_axis("Aim_Left", "Aim_Right")
 	direction.y = Input.get_axis("Aim_Up", "Aim_Down")
 	distance = sqrt((direction.x * direction.x) + (direction.y * direction.y))

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgrklh33pla54"]
+[gd_scene load_steps=8 format=3 uid="uid://bgrklh33pla54"]
 
 [ext_resource type="Texture2D" uid="uid://mxctm88bitok" path="res://icon.svg" id="1_2araf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_cj66b"]
 [ext_resource type="Script" path="res://scripts/PlayerSprite.gd" id="3_1h2oe"]
 [ext_resource type="Texture2D" uid="uid://dktix15p1cn0j" path="res://sprites/Player/Target.png" id="4_1rx0c"]
+[ext_resource type="Script" path="res://scripts/PlayerCamera.gd" id="4_a1ta7"]
 [ext_resource type="Script" path="res://scripts/TargetArrow.gd" id="5_qlg0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufd5n"]
@@ -26,8 +27,7 @@ shape = SubResource("RectangleShape2D_ufd5n")
 position = Vector2(0, -156)
 limit_left = 0
 limit_top = 0
-limit_right = 1920
-limit_bottom = 1080
+script = ExtResource("4_a1ta7")
 
 [node name="TargetArrow" type="Sprite2D" parent="."]
 z_index = 1000
