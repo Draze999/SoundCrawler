@@ -40,9 +40,9 @@ func _dash(delta):
 func _input(_event):
 	direction.x = Input.get_axis("Move_Left", "Move_Right")
 	direction.y = Input.get_axis("Move_Up", "Move_Down")
-	if Input.is_action_just_pressed("Attack"):
+	if Input.is_action_just_pressed("Test_Health_Down"):
 		Health = clamp(Health - 1, 0, MaxHealth)
-	if Input.is_action_just_pressed("Throw"):
+	if Input.is_action_just_pressed("Test_Health_Up"):
 		Health = clamp(Health + 1, 0, MaxHealth)
 	
 
