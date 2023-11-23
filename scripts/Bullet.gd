@@ -1,16 +1,13 @@
-extends Area2D
+extends StaticBody2D
 
 @export var direction = Vector2(1.0,0.0)
-var speed = 700.0
+var speed = 2000.0
 
 func _ready():
 	pass
 
-func _process(delta):
+func _physics_process(delta):
 	position = position + speed * direction * delta
+	speed = clamp(speed - (speed / 33), 0, 2000)
 	
 
-func _on_Bullet_body_entered(body):
-	if body.is_in_group("mobs"):
-		body.queue_free()
-	queue_free()

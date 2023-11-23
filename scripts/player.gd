@@ -55,6 +55,7 @@ func spawn_rock(angle):
 		var curr_b = bullet.instantiate()
 		get_parent().add_child(curr_b)
 		curr_b.position = $Muzzle.global_position
+		curr_b.direction = arrow_node.direction
 		curr_b.rotate(arrow_node.rotation)
 		
 func _test_shoot(delta):
@@ -81,8 +82,8 @@ func _input(_event):
 	
 
 func _process(delta):
-	velocity.x = (direction.normalized().x + DashDirection.x) * SPEED
-	velocity.y = (direction.normalized().y + DashDirection.y) * SPEED
+	velocity.x = (direction.x + DashDirection.x) * SPEED
+	velocity.y = (direction.y + DashDirection.y) * SPEED
 	facingX = 1 if (direction.x < 0) else 0 if (direction.x > 0) else facingX
 	facingY = 2 if (direction.y < 0) else 0 if (direction.y > 0) else facingY
 	if (direction.x == 0):

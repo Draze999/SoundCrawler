@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var direction = Vector2()
+@export var direction = Vector2()
 @export var rotations = 0
 @export var distance = 0
 @onready var sizemax = texture.get_size()
