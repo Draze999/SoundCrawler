@@ -1,7 +1,8 @@
 extends Sprite2D
 
 var direction = Vector2()
-var distance = 0
+@export var rotations = 0
+@export var distance = 0
 @onready var sizemax = texture.get_size()
 
 # Called when the node enters the scene tree for the first time.
@@ -17,7 +18,8 @@ func _process(_delta):
 	clamp(distance, 0, 1)
 	set_scale(Vector2(distance, distance))
 	modulate.a = distance * 0.7
-	rotate(atan2(direction.y, direction.x) - rotation)
+	rotations = atan2(direction.y, direction.x) - rotation
+	rotate(rotations)
 	position.x = 200 * direction.x
 	position.y = 200 * direction.y - 64
 	

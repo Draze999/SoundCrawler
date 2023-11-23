@@ -9,11 +9,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var CamPos = get_viewport().get_camera_2d().get_screen_center_position()
-	position = CamPos - (get_viewport_rect().size / 2)
-	
 	var DashC = str(playerNode.DashCount)
+	var Dashmax = str(playerNode.MaxDashCount)
 	var DashCD = str(snappedf(playerNode.DashResetTimer, 0.1))
+	var RockC = str(playerNode.ShootCount)
+	var Rockmax = str(playerNode.MaxShootCount)
+	var RockCD = str(snappedf(playerNode.ShootResetTimer, 0.1))
 	var HP = ""
 	for x in playerNode.Health:
 		HP += '♥'
@@ -22,4 +23,5 @@ func _process(_delta):
 		LastHP += "♡"
 	if DashCD.length() == 1:
 		DashCD += ".0"
-	text = " Dash : " + DashC + "\n CD     : " + DashCD + "\n HP     : " + HP + LastHP
+	text = " Dash : " + DashC + " / " + Dashmax + "\n CD     : " + DashCD + "\n HP     : " + HP + LastHP
+	text += "\n Rocks: " + RockC + " / " + Rockmax + "\n CD     : " + RockCD

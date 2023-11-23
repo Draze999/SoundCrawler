@@ -34,3 +34,6 @@ z_index = 1000
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_1rx0c")
 script = ExtResource("5_qlg0s")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -64)
