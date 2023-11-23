@@ -13,6 +13,7 @@ anchors_preset = 0
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = 1000
 z_as_relative = false
+layout_mode = 0
 offset_right = 467.0
 offset_bottom = 227.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
