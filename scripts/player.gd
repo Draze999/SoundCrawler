@@ -55,7 +55,7 @@ func spawn_rock(angle):
 		var curr_b = bullet.instantiate()
 		get_parent().add_child(curr_b)
 		curr_b.position = $Muzzle.global_position
-		curr_b.direction = arrow_node.direction
+		curr_b.initi(arrow_node.direction)
 		curr_b.rotate(arrow_node.rotation)
 		
 func _test_shoot(delta):

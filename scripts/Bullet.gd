@@ -1,13 +1,16 @@
-extends StaticBody2D
+extends RigidBody2D
 
-@export var direction = Vector2(1.0,0.0)
-var speed = 2000.0
+const speed = 1500.0
+var timer = 3
 
-func _ready():
-	pass
+func initi(dir:Vector2):
+	linear_velocity = speed * dir
 
-func _physics_process(delta):
-	position = position + speed * direction * delta
-	speed = clamp(speed - (speed / 33), 0, 2000)
-	
+func _process(delta):
+	if (timer <= 0):
+		queue_free()
+	if (abs(linear_velocity.x) + abs(linear_velocity.y) < 25):
+		timer -= delta
 
+func _on_body_entered(body):
+	print("Poulet") # Replace with function body.
