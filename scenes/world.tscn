@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4jewdnjv5byo"]
+[gd_scene load_steps=6 format=3 uid="uid://c4jewdnjv5byo"]
 
 [ext_resource type="PackedScene" uid="uid://bgrklh33pla54" path="res://scenes/player.tscn" id="1_lvunc"]
 [ext_resource type="PackedScene" uid="uid://du7d1d6s36e7n" path="res://scenes/background.tscn" id="2_s41g0"]
 [ext_resource type="PackedScene" uid="uid://c46tqj6ulplsn" path="res://scenes/Interface.tscn" id="3_am1ih"]
 [ext_resource type="PackedScene" uid="uid://21l55e6oc336" path="res://scenes/enemy.tscn" id="4_o0ctt"]
+[ext_resource type="PackedScene" uid="uid://ifw7jorb1yb7" path="res://scenes/bumper.tscn" id="5_jmc4i"]
 
 [node name="World" type="Node2D"]
 
@@ -20,4 +21,12 @@ offset_right = 75.0
 offset_bottom = 75.0
 
 [node name="enemy" parent="." instance=ExtResource("4_o0ctt")]
-position = Vector2(1634, 476)
+position = Vector2(1919, 426)
+
+[node name="Bumpers" type="Node2D" parent="."]
+position = Vector2(2261, 425)
+
+[node name="Bumper" parent="Bumpers" instance=ExtResource("5_jmc4i")]
+position = Vector2(-665, 0)
+
+[node name="Bumper2" parent="Bumpers" instance=ExtResource("5_jmc4i")]
