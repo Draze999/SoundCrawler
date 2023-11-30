@@ -144,6 +144,7 @@ Test_Health_Down={
 2d_physics/layer_2="Wall"
 2d_physics/layer_3="Rocks"
 2d_physics/layer_4="Bumpers"
+2d_physics/layer_5="Enemies"
 
 [physics]
 

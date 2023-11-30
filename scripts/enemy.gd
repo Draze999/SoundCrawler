@@ -12,3 +12,7 @@ func _process(delta):
 	if is_on_wall():
 		moveSpeed *= -1
 		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h 
+
+func _take_damage(damage):
+	print("Je prends " + damage.to_string() + " degats")
+	pass

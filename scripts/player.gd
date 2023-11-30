@@ -58,6 +58,11 @@ func spawn_rock(angle):
 		curr_b.initi(arrow_node.direction)
 		curr_b.rotate(arrow_node.rotation)
 		
+		for child in get_tree().get_current_scene().get_children():
+			if "enemies" in child.get_groups():
+				var enemy_script = child.get_script()
+				#child.connect("hit", enemy_script._take_damage)
+		
 func _test_shoot(delta):
 	if ShootCount < MaxShootCount:
 		ShootResetTimer -= delta
@@ -97,4 +102,3 @@ func _process(delta):
 	_test_health()
 	_dash(delta)
 	move_and_slide()
-
