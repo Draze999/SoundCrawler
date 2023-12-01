@@ -4,26 +4,26 @@ extends CharacterBody2D
 const bullet = preload("res://scenes/bullet.tscn")
 var SPEED = 400.0
 
-var Health = 3
-var MaxHealth = 5
+@export var Health = 3
+@export var MaxHealth = 5
 
 var direction = Vector2()
 var DashDirection = Vector2.ZERO
 
 var canDash = true
-var MaxDashTimer = 0.1
-var MaxDashResetTimer = 3
-var MaxDashCount = 5
+@export var MaxDashTimer = 0.1
+@export var MaxDashResetTimer = 3
+@export var MaxDashCount = 5
 var DashTimer = MaxDashTimer
-@export var DashResetTimer = MaxDashResetTimer
-@export var DashCount = MaxDashCount
+var DashResetTimer = MaxDashResetTimer
+var DashCount = MaxDashCount
 
-var MaxShootResetTimer = 2
-var MaxShootCount = 10
-@export var ShootResetTimer = MaxShootResetTimer
-@export var ShootCount = MaxShootCount
+@export var MaxShootResetTimer = 2
+@export var MaxShootCount = 10
+var ShootResetTimer = MaxShootResetTimer
+var ShootCount = MaxShootCount
 
-@export var facing = 0 #0 = Right Bottom; 1 = Left Bottom; 2 = Right Top; 3 = Left Top;
+var facing = 0 #0 = Right Bottom; 1 = Left Bottom; 2 = Right Top; 3 = Left Top;
 var facingX:int = 0
 var facingY:int = 0
 
