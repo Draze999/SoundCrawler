@@ -19,8 +19,8 @@ func _process(_delta):
 		var player_pos = get_node("../../Player").position
 		var CamPos = get_viewport().get_camera_2d().get_screen_center_position()
 		var positioncam = CamPos - (get_viewport_rect().size / 2)
-		direction.x = - player_pos.x + mouse_pos.x + positioncam.x
-		direction.y = - player_pos.y + mouse_pos.y + 64 + positioncam.y
+		direction.x = - player_pos.x + mouse_pos.x + positioncam.x + 15
+		direction.y = - player_pos.y + mouse_pos.y + 45 + positioncam.y
 		direction = direction.normalized()
 	else:
 		direction.x = Input.get_axis("Aim_Left", "Aim_Right")
@@ -31,6 +31,6 @@ func _process(_delta):
 	modulate.a = distance * 0.7
 	rotations = atan2(direction.y, direction.x) - rotation
 	rotate(rotations)
-	position.x = 200 * direction.x
-	position.y = 200 * direction.y - 64
+	position.x = 200 * direction.x - 15
+	position.y = 200 * direction.y - 45
 	

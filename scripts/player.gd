@@ -84,11 +84,11 @@ func _input(_event):
 func _process(delta):
 	velocity.x = (direction.x + DashDirection.x) * SPEED
 	velocity.y = (direction.y + DashDirection.y) * SPEED
-	facingX = 1 if (direction.x < 0) else 0 if (direction.x > 0) else facingX
-	facingY = 2 if (direction.y < 0) else 0 if (direction.y > 0) else facingY
-	if (direction.x == 0):
+	facingX = 1 if (velocity.x < -0.05) else 0 if (velocity.x > 0.05) else facingX
+	facingY = 2 if (velocity.y < -0.05) else 0 if (velocity.y > 0.05) else facingY
+	if (velocity.x in [-0.05, 0.05]):
 		facing = (facing % 2) + facingY
-	elif (direction.y == 0):
+	elif (velocity.y in [-0.05, 0.05]):
 		facing = (facing / 2) + facingX
 	else:
 		facing = facingX + facingY
