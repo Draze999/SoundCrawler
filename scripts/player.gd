@@ -48,7 +48,7 @@ func _dash(delta):
 		DashCount += 1
 		DashResetTimer = MaxDashResetTimer
 		
-func spawn_rock(angle):
+func spawn_rock():
 	var arrow_node = get_node("TargetArrow")
 	if (arrow_node.distance > 0.3):
 		ShootCount -= 1
@@ -65,7 +65,7 @@ func _test_shoot(delta):
 		ShootCount += 1
 		ShootResetTimer = MaxShootResetTimer
 	if Input.is_action_just_pressed("Throw") and ShootCount > 0:
-		spawn_rock(deg_to_rad(135))
+		spawn_rock()
 
 func _test_health():
 	if Input.is_action_just_pressed("Test_Health_Down"):
@@ -89,7 +89,7 @@ func _process(delta):
 	if (velocity.x in [-0.05, 0.05]):
 		facing = (facing % 2) + facingY
 	elif (velocity.y in [-0.05, 0.05]):
-		facing = (facing / 2) + facingX
+		facing = (facing / 2.) + facingX
 	else:
 		facing = facingX + facingY
 

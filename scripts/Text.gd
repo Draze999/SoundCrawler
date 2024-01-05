@@ -4,7 +4,7 @@ var playerNode
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	playerNode = get_node("../../Player")
+	playerNode = get_node("../../SubViewportContainer/SubViewport/World/Player")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

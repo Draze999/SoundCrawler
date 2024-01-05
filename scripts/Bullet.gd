@@ -12,5 +12,5 @@ func _process(delta):
 	if (abs(linear_velocity.x) + abs(linear_velocity.y) < 25):
 		timer -= delta
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	print("Poulet") # Replace with function body.
