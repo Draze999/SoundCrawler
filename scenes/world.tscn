@@ -7,16 +7,18 @@
 [node name="World" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("2_s41g0")]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_lvunc")]
 z_index = 1
+y_sort_enabled = true
 position = Vector2(591, 365)
 
 [node name="Shadow" type="CanvasModulate" parent="."]
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [node name="Light 1" parent="." instance=ExtResource("3_s2ebt")]
-position = Vector2(2816, 311)
+position = Vector2(2820, 1154)
 
 [node name="Light 2" parent="." instance=ExtResource("3_s2ebt")]
-position = Vector2(2816, 915)
+position = Vector2(2820, 1758)

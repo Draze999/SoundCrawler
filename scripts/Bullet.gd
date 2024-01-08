@@ -4,6 +4,9 @@ const speed = 1500.0
 var timer = 3
 var light_timer = 0
 var light_node
+var impact_velocity = 0
+var old_vel = Vector2(0, 0)
+var new_vel = Vector2(0, 0)
 
 func _ready():
 	light_node = get_node("./PointLight2D")
@@ -15,6 +18,8 @@ func curver(x):
 	return x * x * x * x
 
 func _process(delta):
+	old_vel = new_vel
+	new_vel = linear_velocity
 	if (scale.x <=0.1):
 		queue_free()
 	elif (timer <= 0):
@@ -24,10 +29,12 @@ func _process(delta):
 		timer -= delta
 	if (light_timer > 0) :
 		light_timer = clamp(light_timer - delta, 0, 1)
-		light_node.scale = Vector2(1 + 2 * curver(light_timer), 1 + 2 * curver(light_timer))
+		light_node.scale = Vector2(1 + impact_velocity * curver(light_timer), 1 + impact_velocity * curver(light_timer))
 
 func _on_body_entered(_body):
 	light_timer += 1
+	impact_velocity = (sqrt(old_vel.x * old_vel.x + old_vel.y * old_vel.y) / 750)
+	print(impact_velocity)
 	$Audio.pitch_scale = randf_range(0.3, 0.7)
 	$Audio.play(0)
 	print("Poulet") # Replace with function body.

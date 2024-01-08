@@ -1,7 +1,7 @@
 extends TileMap
 
 @export var width = 25 * tile_set.tile_size.x * scale.x
-@export var height = 11 * tile_set.tile_size.y * scale.y
+@export var height = 18 * tile_set.tile_size.y * scale.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
