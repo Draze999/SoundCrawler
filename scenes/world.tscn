@@ -12,7 +12,7 @@ y_sort_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_lvunc")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(591, 365)
+position = Vector2(457, 451)
 
 [node name="Shadow" type="CanvasModulate" parent="."]
 color = Color(0.196078, 0.196078, 0.196078, 1)
