@@ -23,5 +23,12 @@ func _process(_delta):
 		LastHP += "♡"
 	if DashCD.length() == 1:
 		DashCD += ".0"
-	text = " Dash : " + DashC + " / " + Dashmax + "\n CD     : " + DashCD + "\n HP     : " + HP + LastHP
+	var Berserk = ""
+	for i in playerNode.berserkCount:
+		Berserk += "▬"
+	for i in (20 - playerNode.berserkCount):
+		Berserk += "▭"
+		
+	text = " HP     : " + HP + LastHP + "\n Rage : " + Berserk
+	text += "\n Dash : " + DashC + " / " + Dashmax + "\n CD     : " + DashCD
 	text += "\n Rocks: " + RockC + " / " + Rockmax + "\n CD     : " + RockCD

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1sodeco2m6t8"]
+[gd_scene load_steps=6 format=3 uid="uid://c1sodeco2m6t8"]
 
 [ext_resource type="Script" path="res://scripts/Bullet.gd" id="1_0nbg4"]
 [ext_resource type="Texture2D" uid="uid://gq0sfuonjfe1" path="res://sprites/Player/rock.png" id="2_dmm7a"]
+[ext_resource type="Texture2D" uid="uid://cx3mlh4amvkoe" path="res://sprites/LightShadeDiffuse.png" id="3_mu2kp"]
+[ext_resource type="AudioStream" uid="uid://cj3wrgqxmba4v" path="res://sounds/Rock_Hit.mp3" id="4_wdrf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3svx8"]
 size = Vector2(222, 226.5)
@@ -27,5 +29,17 @@ position = Vector2(1.125, 1.15625)
 scale = Vector2(0.125, 0.125)
 shape = SubResource("RectangleShape2D_3svx8")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 1.5
+blend_mode = 2
+range_item_cull_mask = 513
+texture = ExtResource("3_mu2kp")
+texture_scale = 1.5
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wdrf1")
+pitch_scale = 0.7
+max_polyphony = 10
+
 [connection signal="body_entered" from="." to="." method="test"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

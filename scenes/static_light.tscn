@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwqiepy7vml1y"]
+
+[ext_resource type="Texture2D" uid="uid://cx3mlh4amvkoe" path="res://sprites/LightShadeDiffuse.png" id="1_yqcq1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_coun2"]
+blend_mode = 1
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_coun2")
+amount = 50
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 80.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 7.5
+scale_amount_max = 7.5
+color = Color(0.776471, 0.564706, 0.341176, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="PointLight2D" type="PointLight2D" parent="CPUParticles2D"]
+color = Color(0.952941, 0.764706, 0.45098, 1)
+blend_mode = 2
+range_item_cull_mask = 513
+shadow_color = Color(0, 0, 0, 1)
+shadow_item_cull_mask = 513
+texture = ExtResource("1_yqcq1")
+texture_scale = 5.0

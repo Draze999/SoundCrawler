@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4jewdnjv5byo"]
+[gd_scene load_steps=4 format=3 uid="uid://c4jewdnjv5byo"]
 
 [ext_resource type="PackedScene" uid="uid://bgrklh33pla54" path="res://scenes/player.tscn" id="1_lvunc"]
 [ext_resource type="PackedScene" uid="uid://du7d1d6s36e7n" path="res://scenes/background.tscn" id="2_s41g0"]
+[ext_resource type="PackedScene" uid="uid://cwqiepy7vml1y" path="res://scenes/static_light.tscn" id="3_s2ebt"]
 
 [node name="World" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("2_s41g0")]
 
 [node name="Player" parent="." instance=ExtResource("1_lvunc")]
 z_index = 1
 position = Vector2(591, 365)
 
-[node name="Background" parent="." instance=ExtResource("2_s41g0")]
+[node name="Shadow" type="CanvasModulate" parent="."]
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Light 1" parent="." instance=ExtResource("3_s2ebt")]
+position = Vector2(2816, 311)
+
+[node name="Light 2" parent="." instance=ExtResource("3_s2ebt")]
+position = Vector2(2816, 915)

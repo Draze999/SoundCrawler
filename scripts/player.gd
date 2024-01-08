@@ -4,7 +4,7 @@ extends CharacterBody2D
 const bullet = preload("res://scenes/bullet.tscn")
 var SPEED = 400.0
 
-@export var Health = 3
+@export var Health = 5
 @export var MaxHealth = 5
 
 var direction = Vector2()
@@ -26,6 +26,8 @@ var ShootCount = MaxShootCount
 var facing = 0 #0 = Right Bottom; 1 = Left Bottom; 2 = Right Top; 3 = Left Top;
 var facingX:int = 0
 var facingY:int = 0
+
+@export var berserkCount = 0
 
 func _dash(delta):
 	if Input.is_action_just_pressed("Dash") and canDash and (DashCount > 0):
@@ -70,10 +72,12 @@ func _test_shoot(delta):
 func _test_health():
 	if Input.is_action_just_pressed("Test_Health_Down"):
 		Health = clamp(Health - 1, 0, MaxHealth)
+		berserkCount = clamp(berserkCount - 1, 0, 20)
 	if Input.is_action_just_pressed("Test_Health_Up"):
 		if Health == MaxHealth:
 			MaxHealth += 1
 		Health = clamp(Health + 1, 0, MaxHealth)
+		berserkCount = clamp(berserkCount + 1, 0, 20)
 
 func _input(_event):
 	direction.x = Input.get_axis("Move_Left", "Move_Right")
